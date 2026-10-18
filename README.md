@@ -1,4 +1,9 @@
 # Project-Redbox
+
+To play my game visit my Itch.io page to play it on website, no download needed!
+
+https://nightsh1ft.itch.io/project-redbox
+
 My first game, it's only a prototype if there's anything you suggest I should add or remove please do so.
 
 v0.2
