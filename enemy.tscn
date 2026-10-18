@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cp7h74wvfjf5v"]
+
+[ext_resource type="Script" uid="uid://c767kqehm52q6" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pubb5"]
+size = Vector2(19.967102, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuc1s"]
+radius = 715.12756
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tl3m5"]
+radius = 96.47175
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1321254501 groups=["enemies"]]
+scale = Vector2(0.99511003, 1)
+disable_mode = 1
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899989541]
+position = Vector2(-8.039312, -30)
+shape = SubResource("RectangleShape2D_pubb5")
+
+[node name="Enemy" type="ColorRect" parent="." unique_id=1226792350]
+offset_left = -18.0
+offset_top = -60.0
+offset_right = 2.0
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Hurtbox" type="Area2D" parent="Enemy" unique_id=1424373455]
+position = Vector2(18, 60)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemy/Hurtbox" unique_id=1674666983]
+position = Vector2(-8.039312, -30)
+shape = SubResource("RectangleShape2D_pubb5")
+
+[node name="Detection" type="Area2D" parent="." unique_id=1553062836]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=267512093]
+position = Vector2(-8.039312, -30)
+shape = SubResource("CircleShape2D_cuc1s")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=265098971]
+position = Vector2(8.039312, -5)
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1923143226]
+position = Vector2(-16.078613, -25)
+shape = SubResource("CircleShape2D_tl3m5")
+
+[node name="EnemyHealth" type="ProgressBar" parent="." unique_id=1309709328]
+self_modulate = Color(1, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 5.575
+anchor_top = 3.25
+anchor_right = 6.9
+anchor_bottom = 3.25
+offset_left = -44.216217
+offset_top = -93.0
+offset_right = 29.783783
+offset_bottom = -62.0
+grow_vertical = 0
+max_value = 50.0
+value = 50.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://c5mxp8gtey0y2"]
+
+[ext_resource type="Script" uid="uid://dpvrh1v8bbvpd" path="res://Time-Based Spawner.gd" id="1_dy17d"]
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_gfoop"]
+[ext_resource type="PackedScene" uid="uid://cp7h74wvfjf5v" path="res://enemy.tscn" id="2_dy17d"]
+[ext_resource type="Script" uid="uid://beuo550jk5231" path="res://chest.gd" id="3_hbslj"]
+[ext_resource type="Script" uid="uid://pgd3vmdtvawo" path="res://restart_button.gd" id="4_41nr1"]
+[ext_resource type="Script" uid="uid://dpu7hd4womwug" path="res://wave_10_screen.gd" id="4_hbslj"]
+[ext_resource type="Script" uid="uid://ds6rj85fqg6yk" path="res://play_again_button.gd" id="6_0ny3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pubb5"]
+size = Vector2(17.826088, 119.41748)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy17d"]
+size = Vector2(78, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl3m5"]
+size = Vector2(89, 45)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pauvl"]
+radius = 60.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pubb5"]
+
+[node name="Node2D" type="Node2D" unique_id=2129990325]
+script = ExtResource("1_dy17d")
+enemy_scene = ExtResource("2_dy17d")
+metadata/_edit_vertical_guides_ = [959.0]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=813227883 groups=["player"]]
+position = Vector2(274, 188)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_gfoop")
+
+[node name="Character" type="ColorRect" parent="Player" unique_id=541359630]
+anchors_preset = -1
+offset_left = -20.0
+offset_top = -59.0
+offset_right = 21.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37097284, 0.9999998, 0.8425226, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2142238631]
+position = Vector2(0.50000095, 2.5000038)
+scale = Vector2(2.3, 1.03)
+shape = SubResource("RectangleShape2D_pubb5")
+
+[node name="Weapon" type="ColorRect" parent="Player" unique_id=636687194]
+offset_left = 3.0
+offset_top = -6.0
+offset_right = 81.0
+offset_bottom = 6.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackArea" type="Area2D" parent="Player/Weapon" unique_id=1883949183]
+position = Vector2(-3, 6)
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Weapon/AttackArea" unique_id=1757623891]
+position = Vector2(42, 0)
+shape = SubResource("RectangleShape2D_dy17d")
+
+[node name="Enemy" parent="." unique_id=1321254501 instance=ExtResource("2_dy17d")]
+position = Vector2(1733.0001, 837)
+collision_mask = 7
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=271643649]
+
+[node name="PlayerStats" type="Control" parent="UI" unique_id=402906695]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 66.0
+offset_top = -9.0
+offset_right = 106.0
+offset_bottom = 31.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Stamina" type="ProgressBar" parent="UI/PlayerStats" unique_id=234858152]
+self_modulate = Color(0, 0.86115783, 0.12125034, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.3
+anchor_top = 2.4
+anchor_right = 2.3
+anchor_bottom = 2.4
+offset_left = -157.0
+offset_top = -87.0
+offset_right = -83.0
+offset_bottom = -56.0
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="ProgressBar" parent="UI/PlayerStats" unique_id=345703519]
+self_modulate = Color(0, 0.86115783, 0.12125034, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.3
+anchor_top = 3.225
+anchor_right = 3.625
+anchor_bottom = 3.225
+offset_left = -157.0
+offset_top = -87.0
+offset_right = -83.0
+offset_bottom = -56.0
+grow_vertical = 0
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DeathScreen" type="Control" parent="UI" unique_id=1014874819]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KillCountLabel" type="Label" parent="UI/DeathScreen" unique_id=646076684]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -267.0
+offset_top = 206.00002
+offset_right = -109.400024
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+theme_override_font_sizes/font_size = 15
+
+[node name="RestartButton" type="Button" parent="UI/DeathScreen" unique_id=2103842876]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 127.0
+offset_right = 562.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 30
+text = "Restart!"
+script = ExtResource("4_41nr1")
+
+[node name="Label" type="Label" parent="UI/DeathScreen" unique_id=979903903]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 31.0
+offset_right = 657.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 56
+text = "Game over!"
+
+[node name="Wave10Screen" type="Control" parent="UI" unique_id=1166043741]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hbslj")
+
+[node name="KillCountLabel" type="Label" parent="UI/Wave10Screen" unique_id=419977524]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = 194.0
+offset_right = -142.00006
+offset_bottom = -431.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+theme_override_font_sizes/font_size = 10
+
+[node name="ThanksLabel" type="Label" parent="UI/Wave10Screen" unique_id=949514209]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 82.0
+offset_right = 878.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 25
+text = "You reached Wave 10! Thanks for playing my prototype!"
+
+[node name="TimeSurvivedLabel" type="Label" parent="UI/Wave10Screen" unique_id=1432191745]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 256.0
+offset_right = 577.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 25
+
+[node name="PlayAgainButton" type="Button" parent="UI/Wave10Screen" unique_id=814808507]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 135.0
+offset_right = 540.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 25
+text = "Play Again!"
+script = ExtResource("6_0ny3e")
+
+[node name="TimerDisplay" type="Label" parent="UI" unique_id=1085670804]
+offset_left = 480.0
+offset_top = 24.0
+offset_right = 520.0
+offset_bottom = 47.0
+
+[node name="WaveDisplay" type="Label" parent="UI" unique_id=1479410108]
+offset_left = 470.0
+offset_top = -1.0
+offset_right = 542.0
+offset_bottom = 22.0
+
+[node name="DebugPanel" type="Control" parent="UI" unique_id=1332284058]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1006.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 44.0
+
+[node name="GodModeToggle" type="Button" parent="UI/DebugPanel" unique_id=1758879140]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 142.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "Unkillable mode"
+
+[node name="KillSelfButton" type="Button" parent="UI/DebugPanel" unique_id=1580315514]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 44.0
+offset_right = 143.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 20
+text = "Kill self"
+
+[node name="Chest" type="Area2D" parent="." unique_id=83491398]
+position = Vector2(0, -6)
+script = ExtResource("3_hbslj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest" unique_id=1117966906]
+position = Vector2(1634.5, 517.5)
+shape = SubResource("RectangleShape2D_tl3m5")
+
+[node name="ColorRect" type="ColorRect" parent="Chest" unique_id=1046347921]
+offset_left = 1591.0
+offset_top = 495.0
+offset_right = 1678.0
+offset_bottom = 539.0
+color = Color(0.6362643, 0.28449088, 0.0053960346, 1)
+
+[node name="InteractionArea" type="Area2D" parent="Chest" unique_id=679229613]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/InteractionArea" unique_id=1854023929]
+position = Vector2(1635, 517)
+shape = SubResource("CircleShape2D_pauvl")
+
+[node name="MapBorder" type="StaticBody2D" parent="." unique_id=326558693]
+collision_mask = 0
+
+[node name="Top wall" type="CollisionShape2D" parent="MapBorder" unique_id=845419981]
+position = Vector2(97.000015, -1.0000001)
+rotation = 3.1374865
+scale = Vector2(0.96000063, 0.71842504)
+skew = 0.00032186508
+shape = SubResource("WorldBoundaryShape2D_pubb5")
+
+[node name="Bottom wall" type="CollisionShape2D" parent="MapBorder" unique_id=623153645]
+position = Vector2(91, 649)
+rotation = -0.0042036595
+scale = Vector2(0.96000063, 0.71842504)
+skew = 0.00032186508
+shape = SubResource("WorldBoundaryShape2D_pubb5")
+
+[node name="Left wall" type="CollisionShape2D" parent="MapBorder" unique_id=1075063639]
+position = Vector2(1, 295)
+rotation = 1.5642267
+scale = Vector2(0.96000063, 0.71842504)
+skew = 0.00032186508
+shape = SubResource("WorldBoundaryShape2D_pubb5")
+
+[node name="Right wall" type="CollisionShape2D" parent="MapBorder" unique_id=1993922975]
+position = Vector2(1153.0001, 340)
+rotation = -1.5645274
+scale = Vector2(0.96000063, 0.71842504)
+skew = 0.00032186508
+shape = SubResource("WorldBoundaryShape2D_pubb5")
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=441974157]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2124955590]
+wait_time = 2.0
+autostart = true
+
+[connection signal="area_entered" from="Player/Weapon/AttackArea" to="Player" method="_on_attack_area_area_entered"]
+[connection signal="body_entered" from="Player/Weapon/AttackArea" to="Player" method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="Chest" to="Chest" method="_on_body_entered"]
+[connection signal="body_exited" from="Chest" to="Chest" method="_on_body_exited"]
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
