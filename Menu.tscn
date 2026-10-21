@@ -1,0 +1,381 @@
+[gd_scene format=3 uid="uid://c0k2yv80pnsyw"]
+
+[ext_resource type="Script" uid="uid://bu8c3g802h7e1" path="res://menu.gd" id="1_uubjt"]
+
+[node name="Node2D" type="Node2D" unique_id=1070337815]
+script = ExtResource("1_uubjt")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1646900800]
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Start" type="Button" parent="." unique_id=1359569549]
+offset_left = 455.0
+offset_top = 275.0
+offset_right = 674.0
+offset_bottom = 338.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Start game"
+
+[node name="Controls" type="Button" parent="." unique_id=1904028439]
+offset_left = 455.0
+offset_top = 360.0
+offset_right = 674.0
+offset_bottom = 423.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+
+[node name="Title" type="Label" parent="." unique_id=108917279]
+offset_left = 183.0
+offset_top = 81.0
+offset_right = 943.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 100
+text = "Project: RedBox"
+
+[node name="Controls_Menu" type="ColorRect" parent="." unique_id=1245232297]
+visible = false
+offset_left = 393.0
+offset_top = 74.0
+offset_right = 732.0
+offset_bottom = 577.0
+color = Color(0.46440002, 0.49086002, 0.54, 0.99607843)
+
+[node name="leave menu" type="Button" parent="Controls_Menu" unique_id=1162440953]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 3.0
+offset_right = 336.0
+offset_bottom = 39.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[node name="Label" type="Label" parent="Controls_Menu" unique_id=1374654927]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 325.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 77
+text = "Controls"
+
+[node name="Label2" type="Label" parent="Controls_Menu" unique_id=1331028423]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 112.0
+offset_right = 179.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "W"
+
+[node name="Label12" type="Label" parent="Controls_Menu" unique_id=468672558]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 103.0
+offset_right = 40.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "KBM"
+
+[node name="Label13" type="Label" parent="Controls_Menu" unique_id=1810296064]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 258.0
+offset_right = 178.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Controller"
+
+[node name="Label10" type="Label" parent="Controls_Menu" unique_id=544152336]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 227.0
+offset_right = 187.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Left mouse button"
+
+[node name="Label11" type="Label" parent="Controls_Menu" unique_id=868258212]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 226.0
+offset_right = 235.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Attack"
+
+[node name="Label16" type="Label" parent="Controls_Menu" unique_id=2768169]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 442.0
+offset_right = 113.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Attack"
+
+[node name="Label6" type="Label" parent="Controls_Menu" unique_id=1962920377]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 100.0
+offset_right = 174.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "up"
+
+[node name="Label19" type="Label" parent="Controls_Menu" unique_id=1798558439]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 307.0
+offset_right = 181.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "up"
+
+[node name="Label7" type="Label" parent="Controls_Menu" unique_id=936875112]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 195.0
+offset_right = 181.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "down"
+
+[node name="Label17" type="Label" parent="Controls_Menu" unique_id=1435239876]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 424.0
+offset_right = 191.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "down"
+
+[node name="Label9" type="Label" parent="Controls_Menu" unique_id=1754793535]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 169.0
+offset_right = 111.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Left"
+
+[node name="Label18" type="Label" parent="Controls_Menu" unique_id=217898340]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 362.0
+offset_right = 53.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Left"
+
+[node name="Label8" type="Label" parent="Controls_Menu" unique_id=226843956]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 173.0
+offset_right = 247.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "right
+"
+
+[node name="Label20" type="Label" parent="Controls_Menu" unique_id=1948456110]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 358.0
+offset_right = 312.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "right
+"
+
+[node name="Label3" type="Label" parent="Controls_Menu" unique_id=181488610]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 154.0
+offset_right = 141.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "A"
+
+[node name="Label4" type="Label" parent="Controls_Menu" unique_id=1588500240]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 155.0
+offset_right = 171.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "S"
+
+[node name="Label5" type="Label" parent="Controls_Menu" unique_id=1945627508]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 155.0
+offset_right = 196.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "D"
+
+[node name="Label14" type="Label" parent="Controls_Menu" unique_id=1780449393]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 354.0
+offset_right = 241.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analog stick"
+
+[node name="Label15" type="Label" parent="Controls_Menu" unique_id=1881582940]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 447.0
+offset_right = 64.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "R2"
+
+[node name="ColorRect" type="ColorRect" parent="Controls_Menu" unique_id=480090023]
+layout_mode = 0
+offset_top = 99.0
+offset_right = 339.0
+offset_bottom = 103.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Controls_Menu" unique_id=1611651277]
+layout_mode = 0
+offset_top = 250.0
+offset_right = 339.0
+offset_bottom = 254.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Controls_Menu" unique_id=1981802596]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 334.0
+offset_right = 175.0
+offset_bottom = 359.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="Controls_Menu" unique_id=1789448294]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 396.0
+offset_right = 175.0
+offset_bottom = 421.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Controls_Menu" unique_id=1611604980]
+layout_mode = 0
+offset_left = 64.999985
+offset_top = 376.0
+offset_right = 70.999985
+offset_bottom = 401.0
+rotation = -1.5782919
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="Controls_Menu" unique_id=1246993515]
+layout_mode = 0
+offset_left = 248.99998
+offset_top = 375.00003
+offset_right = 254.99998
+offset_bottom = 400.00003
+rotation = -1.5782919
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Controls_Menu" unique_id=444584686]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 334.00003
+offset_right = 175.0
+offset_bottom = 349.5292
+rotation = 0.5352707
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="Controls_Menu" unique_id=1098984821]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 405.00003
+offset_right = 183.55042
+offset_bottom = 420.3046
+rotation = 0.5352707
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="Controls_Menu" unique_id=2051567136]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 371.0
+offset_right = 275.8064
+offset_bottom = 385.9046
+rotation = 0.8775209
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect14" type="ColorRect" parent="Controls_Menu" unique_id=1680886867]
+layout_mode = 0
+offset_left = 76.51482
+offset_top = 360.41608
+offset_right = 80.62529
+offset_bottom = 375.44852
+rotation = 0.8775209
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="Controls_Menu" unique_id=1187444190]
+layout_mode = 0
+offset_left = 259.3922
+offset_top = 363.4801
+offset_right = 263.87183
+offset_bottom = 378.34393
+rotation = -0.9244716
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="Controls_Menu" unique_id=778364044]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 376.0
+offset_right = 69.479614
+offset_bottom = 390.86383
+rotation = -0.9244716
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Controls_Menu" unique_id=1181836933]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 336.99997
+offset_right = 176.0
+offset_bottom = 352.52914
+rotation = -0.5409875
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Controls_Menu" unique_id=873395772]
+layout_mode = 0
+offset_left = 160.72864
+offset_top = 407.163
+offset_right = 167.04521
+offset_bottom = 423.283
+rotation = -0.5409875
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Controls_Menu/leave menu" to="." method="_on_leave_menu_pressed"]

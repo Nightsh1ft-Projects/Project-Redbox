@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rouglike_v1"
-run/main_scene="uid://c5mxp8gtey0y2"
+run/main_scene="uid://c0k2yv80pnsyw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
